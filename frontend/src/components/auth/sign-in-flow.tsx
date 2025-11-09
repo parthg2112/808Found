@@ -594,7 +594,7 @@ export const SignInPage = ({ className, onSignInSuccess }: SignInPageProps) => {
       {/* Content Layer */}
       <div className="relative z-10 flex flex-col flex-1">
         {/* Top navigation */}
-        <MiniNavbar />
+        {/* <MiniNavbar /> */}
 
         {/* Main content container */}
         <div className="flex flex-1 flex-col lg:flex-row ">

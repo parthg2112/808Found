@@ -31,57 +31,80 @@ export function Sidebar({ isOpen, onNavigate, currentPage, onLogout, setSidebarO
     </div>
   )
 
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.aside
-          initial={{ x: -250, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -250, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="w-64 bg-sidebar border-r border-sidebar-border flex-col absolute inset-y-0 left-0 z-50 md:relative md:flex"
-        >
-          <div className="p-6 border-b border-sidebar-border">{logoElement}</div>
-          <nav className="flex-1 px-4 py-6 space-y-2">
-            {menuItems.map((item) => (
-              <motion.div key={item.page} whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                <Button
-                  variant={currentPage === item.page ? "default" : "ghost"}
-                  className="w-full justify-start gap-3 interactive"
-                  onClick={() => {
-                    onNavigate(item.page)
-                    setSidebarOpen(false)
-                  }}
-                >
-                  <item.icon className="h-4 w-4" />
-                  <span>{item.label}</span>
-                </Button>
-              </motion.div>
-            ))}
-          </nav>
-          <div className="p-4 border-t border-sidebar-border space-y-2">
+  const sidebarContent = (
+    <>
+      <div className="p-6 border-b border-sidebar-border">{logoElement}</div>
+      <nav className="flex-1 px-4 py-6 space-y-2">
+        {menuItems.map((item) => (
+          <motion.div key={item.page} whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
             <Button
-              variant="ghost"
-              className="w-full justify-start gap-2 interactive text-muted-foreground hover:text-foreground"
-              onClick={() => setSidebarOpen(false)}
-            >
-              <HelpCircle className="h-4 w-4" />
-              <span>Help & Support</span>
-            </Button>
-            <Button
+              variant={currentPage === item.page ? "default" : "ghost"}
+              className="w-full justify-start gap-3 interactive"
               onClick={() => {
-                onLogout()
+                onNavigate(item.page)
                 setSidebarOpen(false)
               }}
-              variant="ghost"
-              className="w-full justify-start gap-2 interactive text-red-400 hover:bg-red-950/30 hover:text-red-300"
             >
-              <LogOut className="h-4 w-4" />
-              <span>Logout</span>
+              <item.icon className="h-4 w-4" />
+              <span>{item.label}</span>
             </Button>
-          </div>
-        </motion.aside>
-      )}
-    </AnimatePresence>
+          </motion.div>
+        ))}
+      </nav>
+      <div className="p-4 border-t border-sidebar-border space-y-2">
+        <Button
+          variant="ghost"
+          className="w-full justify-start gap-2 interactive text-muted-foreground hover:text-foreground"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <HelpCircle className="h-4 w-4" />
+          <span>Help & Support</span>
+        </Button>
+        <Button
+          onClick={() => {
+            onLogout()
+            setSidebarOpen(false)
+          }}
+          variant="ghost"
+          className="w-full justify-start gap-2 interactive text-red-400 hover:bg-red-950/30 hover:text-red-300"
+        >
+          <LogOut className="h-4 w-4" />
+          <span>Logout</span>
+        </Button>
+      </div>
+    </>
+  )
+
+  return (
+    <>
+      {/* Mobile Sidebar */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
+            <motion.aside
+              initial={{ x: -250 }}
+              animate={{ x: 0 }}
+              exit={{ x: -250 }}
+              transition={{ duration: 0.3 }}
+              className="w-64 bg-sidebar border-r border-sidebar-border flex flex-col absolute inset-y-0 left-0 z-50 md:hidden"
+            >
+              {sidebarContent}
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Desktop Sidebar */}
+      <aside className="w-64 bg-sidebar border-r border-sidebar-border flex-col hidden md:flex">
+        {sidebarContent}
+      </aside>
+    </>
   )
 }

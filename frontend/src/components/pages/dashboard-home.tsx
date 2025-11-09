@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, BarChart3, Upload, Settings } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowRight, BarChart3, Upload, Settings, type LucideIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ShimmerBorderCard } from "@/components/ui/shimmer-border-card"
+import { RainbowButton } from "@/components/ui/rainbow-button"
 
 type PageType = "home" | "config" | "backtest" | "results" | "upload" | "comparison" | "export"
 
@@ -11,7 +12,7 @@ interface DashboardHomeProps {
   onNavigate: (page: PageType) => void
 }
 
-const features: { icon: any; title: string; description: string; page: PageType }[] = [
+const features: { icon: LucideIcon; title: string; description: string; page: PageType }[] = [
   {
     icon: BarChart3,
     title: "Backtest Strategies",
@@ -71,24 +72,30 @@ export function DashboardHome({ onNavigate }: DashboardHomeProps) {
       >
         {features.map((feature) => (
           <motion.div key={feature.title} variants={itemVariants}>
-            <Card
-              className="h-full cursor-pointer border-border/50 hover:border-accent/50 transition-all duration-300 interactive group"
+            <ShimmerBorderCard
+              className="h-full"
+              shimmerSize="0.1em"
+              shimmerDuration="4s"
               onClick={() => onNavigate(feature.page)}
             >
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <feature.icon className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle>{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">{feature.description}</CardDescription>
-                <div className="mt-4 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Get Started</span>
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </CardContent>
-            </Card>
+              <Card
+                className="h-full cursor-pointer border-0 transition-all duration-300 interactive group"
+              >
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <feature.icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle>{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">{feature.description}</CardDescription>
+                  <div className="mt-4 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-sm font-medium">Get Started</span>
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Card>
+            </ShimmerBorderCard>
           </motion.div>
         ))}
       </motion.div>
@@ -105,9 +112,9 @@ export function DashboardHome({ onNavigate }: DashboardHomeProps) {
           Start by configuring your MA crossover parameters and select the stocks you want to analyze.
         </p>
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-          <Button size="lg" onClick={() => onNavigate("config")} className="interactive">
+          <RainbowButton size="lg" onClick={() => onNavigate("config")} className="interactive">
             Start Backtesting <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          </RainbowButton>
         </motion.div>
       </motion.div>
     </div>
