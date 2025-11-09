@@ -1,0 +1,2 @@
+total_trades,winning_trades,losing_trades,win_rate_pct,avg_profit_pct,avg_loss_pct,max_win,max_loss,profit_factor,max_drawdown_pct,total_return_pct,sharpe_ratio,gross_profit,gross_loss,net_profit,net_profit_pct
+18,8,10,44.4444,6.502152,-4.095839,3955.679883,-446.879791,3.056805,-2.695558,5.174159,4.458142,7689.788491,2515.629152,5174.159339,5.174159
