@@ -1,9 +1,10 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks
+from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks, Body
 from pydantic import BaseModel
 from typing import Dict, Any
 import os
 import uuid
 import pandas as pd
+from app.core.config import CSV_DIR
 
 from app.data import fetching, processing, manipulation
 from app.scheduler import jobs
@@ -47,13 +48,13 @@ def fetch_data():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/data/backtest", summary="Run a backtest")
-def run_backtest(config: Dict[str, Any] = None):
+def run_backtest(config: Dict[str, Any] = Body(None)):
     """
     Runs the backtesting process with the given configuration.
     If no configuration is provided, it uses the default configuration.
     """
     try:
-        if config is None:
+        if config is None or not config: # Check if config is None or empty
             config = processing.CONFIG
         trades_df, metrics, equity_curve_data = processing.run_backtest(config)
         return {
@@ -83,14 +84,14 @@ async def _run_backtest_task(task_id: str, config: Dict[str, Any]):
         backtest_tasks[task_id]["error"] = str(e)
 
 @app.post("/backtest/start", summary="Start an asynchronous backtest")
-async def start_backtest(background_tasks: BackgroundTasks, config: Dict[str, Any] = None):
+async def start_backtest(background_tasks: BackgroundTasks, config: Dict[str, Any] = Body(None)):
     """
     Starts a backtesting process in the background and returns a task ID.
     """
     task_id = str(uuid.uuid4())
     backtest_tasks[task_id] = {"status": "PENDING", "result": None, "error": None}
 
-    if config is None:
+    if config is None or not config:
         config = processing.CONFIG
 
     background_tasks.add_task(_run_backtest_task, task_id, config)
@@ -123,13 +124,17 @@ def manipulate_data_endpoint(config: ManipulationConfig):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+from app.core.config import CSV_DIR # Already imported, just ensuring it's there
+
+# ...
+
 @app.post("/data/upload", summary="Upload a CSV file")
 async def upload_csv_file(file: UploadFile = File(...)):
     """
     Uploads a CSV file to the backend/csv directory.
     """
     try:
-        file_path = os.path.join("backend", "csv", file.filename)
+        file_path = os.path.join(CSV_DIR, file.filename)
         with open(file_path, "wb") as buffer:
             buffer.write(await file.read())
         return {"message": f"File '{file.filename}' uploaded successfully."}
@@ -142,7 +147,7 @@ def get_available_stocks():
     Returns a list of available stocks from the nifty500.csv file.
     """
     try:
-        nifty_file_path = os.path.join("backend", "csv", "nifty500.csv")
+        nifty_file_path = os.path.join(CSV_DIR, "nifty500.csv")
         if not os.path.exists(nifty_file_path):
             raise HTTPException(status_code=404, detail="nifty500.csv not found.")
         

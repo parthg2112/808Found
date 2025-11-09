@@ -1,8 +1,8 @@
 import os
 
 # --- PATHS ---
-BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CSV_DIR = os.path.join(os.path.dirname(BACKEND_DIR), "csv")
+BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+CSV_DIR = os.path.join(BACKEND_DIR, "csv")
 CLOSING_DATA_PATH = os.path.join(CSV_DIR, "closing_data.csv")
 TRADE_LOG_PATH = os.path.join(CSV_DIR, "trade_log.csv")
 BACKTEST_SUMMARY_PATH = os.path.join(CSV_DIR, "backtest_summary.csv")
