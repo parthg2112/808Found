@@ -1,0 +1,247 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/heetpatel/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/heetpatel/808Found/frontend/pnpm-lock.yaml
+
+   ▲ Next.js 16.0.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.109:3000
+
+ ✓ Starting...
+ ✓ Ready in 1308ms
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ GET / 200 in 2.8s (compile: 2.6s, render: 207ms)
+ GET /icon.svg 404 in 273ms (compile: 242ms, render: 31ms)
+ GET /icon-dark-32x32.png 404 in 16ms (compile: 1358µs, render: 15ms)
+[next-auth][warn][NEXTAUTH_URL] 
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET] 
+https://next-auth.js.org/warnings#no_secret
+ GET /api/auth/session 200 in 669ms (compile: 654ms, render: 15ms)
+ GET /api/auth/providers 200 in 25ms (compile: 12ms, render: 13ms)
+ GET /api/auth/csrf 200 in 12ms (compile: 3ms, render: 9ms)
+[next-auth][error][SIGNIN_OAUTH_ERROR] 
+https://next-auth.js.org/errors#signin_oauth_error client_id is required {
+  error: {
+    message: 'client_id is required',
+    stack: 'TypeError: client_id is required\n' +
+      '    at new BaseClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:1318:19)\n' +
+      '    at new Client (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:2843:13)\n' +
+      '    at openidClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:410:20)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+      '    at async getAuthorizationUrl (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1764:20)\n' +
+      '    at async Object.signin (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1846:30)\n' +
+      '    at async AuthHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3294:36)\n' +
+      '    at async NextAuthRouteHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3501:30)\n' +
+      '    at async NextAuth._args$ (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3536:24)\n' +
+      '    at async AppRouteRouteModule.do (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:37913)\n' +
+      '    at async AppRouteRouteModule.handle (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:45132)\n' +
+      '    at async responseGenerator (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11455:38)\n' +
+      '    at async AppRouteRouteModule.handleResponse (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:19:132654)\n' +
+      '    at async handleResponse (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11517:32)\n' +
+      '    at async handler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11570:13)\n' +
+      '    at async DevServer.renderToResponseWithComponentsImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1415:9)\n' +
+      '    at async DevServer.renderPageComponent (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1467:24)\n' +
+      '    at async DevServer.renderToResponseImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1517:32)\n' +
+      '    at async DevServer.pipeImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1023:25)\n' +
+      '    at async NextNodeServer.handleCatchallRenderRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/next-server.js:394:17)\n' +
+      '    at async DevServer.handleRequestImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:914:17)\n' +
+      '    at async /Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20\n' +
+      '    at async Span.traceAsyncFn (/Users/heetpatel/808Found/frontend/node_modules/next/dist/trace/trace.js:157:20)\n' +
+      '    at async DevServer.handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:369:24)\n' +
+      '    at async invokeRender (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:240:21)\n' +
+      '    at async handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:436:24)\n' +
+      '    at async requestHandlerImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:484:13)\n' +
+      '    at async Server.requestListener (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/start-server.js:226:13)',
+    name: 'TypeError'
+  },
+  providerId: 'google',
+  message: 'client_id is required'
+}
+ POST /api/auth/signin/google 200 in 360ms (compile: 3ms, render: 357ms)
+ GET /api/auth/error?error=OAuthSignin 302 in 10ms (compile: 3ms, render: 7ms)
+ GET /api/auth/signin?error=OAuthSignin 200 in 9ms (compile: 1539µs, render: 8ms)
+[next-auth][error][SIGNIN_OAUTH_ERROR] 
+https://next-auth.js.org/errors#signin_oauth_error client_id is required {
+  error: {
+    message: 'client_id is required',
+    stack: 'TypeError: client_id is required\n' +
+      '    at new BaseClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:1318:19)\n' +
+      '    at new Client (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:2843:13)\n' +
+      '    at openidClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:410:20)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+      '    at async getAuthorizationUrl (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1764:20)\n' +
+      '    at async Object.signin (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1846:30)\n' +
+      '    at async AuthHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3294:36)\n' +
+      '    at async NextAuthRouteHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3501:30)\n' +
+      '    at async NextAuth._args$ (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3536:24)\n' +
+      '    at async AppRouteRouteModule.do (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:37913)\n' +
+      '    at async AppRouteRouteModule.handle (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:45132)\n' +
+      '    at async responseGenerator (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11455:38)\n' +
+      '    at async AppRouteRouteModule.handleResponse (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:19:132654)\n' +
+      '    at async handleResponse (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11517:32)\n' +
+      '    at async handler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11570:13)\n' +
+      '    at async DevServer.renderToResponseWithComponentsImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1415:9)\n' +
+      '    at async DevServer.renderPageComponent (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1467:24)\n' +
+      '    at async DevServer.renderToResponseImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1517:32)\n' +
+      '    at async DevServer.pipeImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1023:25)\n' +
+      '    at async NextNodeServer.handleCatchallRenderRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/next-server.js:394:17)\n' +
+      '    at async DevServer.handleRequestImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:914:17)\n' +
+      '    at async /Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20\n' +
+      '    at async Span.traceAsyncFn (/Users/heetpatel/808Found/frontend/node_modules/next/dist/trace/trace.js:157:20)\n' +
+      '    at async DevServer.handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:369:24)\n' +
+      '    at async invokeRender (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:240:21)\n' +
+      '    at async handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:436:24)\n' +
+      '    at async requestHandlerImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:484:13)\n' +
+      '    at async Server.requestListener (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/start-server.js:226:13)',
+    name: 'TypeError'
+  },
+  providerId: 'google',
+  message: 'client_id is required'
+}
+ POST /api/auth/signin/google 302 in 85ms (compile: 6ms, render: 80ms)
+ GET /api/auth/error?error=OAuthSignin 302 in 5ms (compile: 1038µs, render: 4ms)
+ GET /api/auth/signin?error=OAuthSignin 200 in 6ms (compile: 850µs, render: 5ms)
+[next-auth][error][SIGNIN_OAUTH_ERROR] 
+https://next-auth.js.org/errors#signin_oauth_error client_id is required {
+  error: {
+    message: 'client_id is required',
+    stack: 'TypeError: client_id is required\n' +
+      '    at new BaseClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:1318:19)\n' +
+      '    at new Client (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:2843:13)\n' +
+      '    at openidClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:410:20)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+      '    at async getAuthorizationUrl (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1764:20)\n' +
+      '    at async Object.signin (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1846:30)\n' +
+      '    at async AuthHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3294:36)\n' +
+      '    at async NextAuthRouteHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3501:30)\n' +
+      '    at async NextAuth._args$ (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3536:24)\n' +
+      '    at async AppRouteRouteModule.do (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:37913)\n' +
+      '    at async AppRouteRouteModule.handle (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:45132)\n' +
+      '    at async responseGenerator (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11455:38)\n' +
+      '    at async AppRouteRouteModule.handleResponse (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:19:132654)\n' +
+      '    at async handleResponse (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11517:32)\n' +
+      '    at async handler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11570:13)\n' +
+      '    at async DevServer.renderToResponseWithComponentsImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1415:9)\n' +
+      '    at async DevServer.renderPageComponent (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1467:24)\n' +
+      '    at async DevServer.renderToResponseImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1517:32)\n' +
+      '    at async DevServer.pipeImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1023:25)\n' +
+      '    at async NextNodeServer.handleCatchallRenderRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/next-server.js:394:17)\n' +
+      '    at async DevServer.handleRequestImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:914:17)\n' +
+      '    at async /Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20\n' +
+      '    at async Span.traceAsyncFn (/Users/heetpatel/808Found/frontend/node_modules/next/dist/trace/trace.js:157:20)\n' +
+      '    at async DevServer.handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:369:24)\n' +
+      '    at async invokeRender (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:240:21)\n' +
+      '    at async handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:436:24)\n' +
+      '    at async requestHandlerImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:484:13)\n' +
+      '    at async Server.requestListener (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/start-server.js:226:13)',
+    name: 'TypeError'
+  },
+  providerId: 'google',
+  message: 'client_id is required'
+}
+ POST /api/auth/signin/google 302 in 88ms (compile: 6ms, render: 82ms)
+ GET /api/auth/error?error=OAuthSignin 302 in 5ms (compile: 750µs, render: 4ms)
+ GET /api/auth/signin?error=OAuthSignin 200 in 5ms (compile: 636µs, render: 4ms)
+[next-auth][error][SIGNIN_OAUTH_ERROR] 
+https://next-auth.js.org/errors#signin_oauth_error client_id is required {
+  error: {
+    message: 'client_id is required',
+    stack: 'TypeError: client_id is required\n' +
+      '    at new BaseClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:1318:19)\n' +
+      '    at new Client (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_openid-client_db3b259f._.js:2843:13)\n' +
+      '    at openidClient (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:410:20)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+      '    at async getAuthorizationUrl (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1764:20)\n' +
+      '    at async Object.signin (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:1846:30)\n' +
+      '    at async AuthHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3294:36)\n' +
+      '    at async NextAuthRouteHandler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3501:30)\n' +
+      '    at async NextAuth._args$ (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next-auth_6d7305be._.js:3536:24)\n' +
+      '    at async AppRouteRouteModule.do (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:37913)\n' +
+      '    at async AppRouteRouteModule.handle (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:23:45132)\n' +
+      '    at async responseGenerator (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11455:38)\n' +
+      '    at async AppRouteRouteModule.handleResponse (/Users/heetpatel/808Found/frontend/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:19:132654)\n' +
+      '    at async handleResponse (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11517:32)\n' +
+      '    at async handler (/Users/heetpatel/808Found/frontend/.next/dev/server/chunks/d106e_next_8891f92f._.js:11570:13)\n' +
+      '    at async DevServer.renderToResponseWithComponentsImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1415:9)\n' +
+      '    at async DevServer.renderPageComponent (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1467:24)\n' +
+      '    at async DevServer.renderToResponseImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1517:32)\n' +
+      '    at async DevServer.pipeImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:1023:25)\n' +
+      '    at async NextNodeServer.handleCatchallRenderRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/next-server.js:394:17)\n' +
+      '    at async DevServer.handleRequestImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/base-server.js:914:17)\n' +
+      '    at async /Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20\n' +
+      '    at async Span.traceAsyncFn (/Users/heetpatel/808Found/frontend/node_modules/next/dist/trace/trace.js:157:20)\n' +
+      '    at async DevServer.handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/dev/next-dev-server.js:369:24)\n' +
+      '    at async invokeRender (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:240:21)\n' +
+      '    at async handleRequest (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:436:24)\n' +
+      '    at async requestHandlerImpl (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/router-server.js:484:13)\n' +
+      '    at async Server.requestListener (/Users/heetpatel/808Found/frontend/node_modules/next/dist/server/lib/start-server.js:226:13)',
+    name: 'TypeError'
+  },
+  providerId: 'google',
+  message: 'client_id is required'
+}
+ POST /api/auth/signin/google 302 in 157ms (compile: 4ms, render: 152ms)
+ GET /api/auth/error?error=OAuthSignin 302 in 5ms (compile: 892µs, render: 4ms)
+ GET /api/auth/signin?error=OAuthSignin 200 in 4ms (compile: 566µs, render: 4ms)
+ GET /api/auth/signin?error=OAuthSignin 200 in 20ms (compile: 9ms, render: 12ms)
+ GET / 200 in 49ms (compile: 6ms, render: 43ms)
+ GET /api/auth/session 200 in 15ms (compile: 9ms, render: 5ms)
+   Reload env: .env.local
+ GET / 200 in 55ms (compile: 27ms, render: 28ms)
+   Reload env: .env.local
+ GET / 200 in 52ms (compile: 27ms, render: 25ms)
+   Reload env: .env.local
+ GET / 200 in 49ms (compile: 23ms, render: 26ms)
+   Reload env: .env.local
+ GET / 200 in 53ms (compile: 28ms, render: 25ms)
+   Reload env: .env.local
+ GET / 200 in 56ms (compile: 32ms, render: 24ms)
+   Reload env: .env.local
+ GET / 200 in 52ms (compile: 27ms, render: 25ms)
+   Reload env: .env.local
+ GET / 200 in 56ms (compile: 31ms, render: 24ms)
+   Reload env: .env.local
+ GET / 200 in 50ms (compile: 26ms, render: 24ms)
+ GET / 200 in 56ms (compile: 32ms, render: 24ms)
+   Reload env: .env.local
+ GET / 200 in 34ms (compile: 14ms, render: 20ms)
+   Reload env: .env.local
+ GET / 200 in 69ms (compile: 37ms, render: 32ms)
+   Reload env: .env.local
+ GET / 200 in 55ms (compile: 29ms, render: 25ms)
+   Reload env: .env.local
+ GET / 200 in 47ms (compile: 24ms, render: 22ms)
+   Reload env: .env.local
+ GET / 200 in 65ms (compile: 38ms, render: 27ms)
+ GET / 200 in 56ms (compile: 27ms, render: 29ms)
+ GET / 200 in 50ms (compile: 25ms, render: 25ms)
+[next-auth][error][OAUTH_CALLBACK_ERROR] 
+https://next-auth.js.org/errors#oauth_callback_error State cookie was missing. {
+  error: Error [OAuthCallbackError]: State cookie was missing.
+      at ignore-listed frames {
+    code: undefined
+  },
+  providerId: 'google',
+  message: 'State cookie was missing.'
+}
+ GET /api/auth/callback/google 302 in 361ms (compile: 53ms, render: 308ms)
+ GET /api/auth/error?error=OAuthCallback 302 in 5ms (compile: 1213µs, render: 4ms)
+ GET /api/auth/signin?error=OAuthCallback 200 in 34ms (compile: 1213µs, render: 33ms)
+ GET / 200 in 233ms (compile: 6ms, render: 227ms)
+ GET /api/auth/session 200 in 12ms (compile: 5ms, render: 6ms)
+ GET / 200 in 19ms (compile: 1180µs, render: 17ms)
+ GET /api/auth/session 200 in 7ms (compile: 1089µs, render: 6ms)
+ GET / 200 in 15ms (compile: 829µs, render: 15ms)
+ GET /api/auth/session 200 in 8ms (compile: 1589µs, render: 6ms)
+ GET / 200 in 19ms (compile: 897µs, render: 18ms)
+ GET /api/auth/session 200 in 8ms (compile: 4ms, render: 4ms)
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[?25h

@@ -481,6 +481,8 @@ function MiniNavbar() {
   )
 }
 
+import { signIn } from "next-auth/react"
+
 export const SignInPage = ({ className, onSignInSuccess }: SignInPageProps) => {
   const [email, setEmail] = useState("")
   const [step, setStep] = useState<"email" | "code" | "success">("email")
@@ -619,7 +621,9 @@ export const SignInPage = ({ className, onSignInSuccess }: SignInPageProps) => {
                     </div>
 
                     <div className="space-y-4">
-                      <button className="backdrop-blur-[2px] w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full py-3 px-4 transition-colors">
+                      <button 
+                        onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+                        className="backdrop-blur-[2px] w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full py-3 px-4 transition-colors">
                         <span className="text-lg">G</span>
                         <span>Sign in with Google</span>
                       </button>

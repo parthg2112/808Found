@@ -72,7 +72,7 @@ The base URL for all API endpoints is typically `http://localhost:8000` during l
             "sharpe_ratio": 1.2,
             "max_drawdown": -0.10
         },
-        "trades": [
+         "trades": [
             {
                 "date": "2020-03-10",
                 "symbol": "AAPL",

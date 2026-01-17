@@ -47,8 +47,8 @@ export function UserAccountModal({ isOpen, onClose, onLogout }: UserAccountModal
                   <User className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">John Trader</h3>
-                  <p className="text-sm text-muted-foreground">john@example.com</p>
+                  <h3 className="font-semibold">Heet Patel</h3>
+                  <p className="text-sm text-muted-foreground">heet@ominix.in</p>
                 </div>
               </div>
             </div>
